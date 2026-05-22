@@ -6,7 +6,7 @@ import { MOCK_PRODUCTS } from "@/lib/mockProducts";
 import AddToCart from "./AddToCart";
 import type { Product } from "@/types";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default async function ProductDetail({ params }: { params: { id: string } }) {
   let product: Product | null = null;

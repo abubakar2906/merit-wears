@@ -10,7 +10,7 @@ import Reveal from "@/components/home/Reveal";
 import { getMockProducts } from "@/lib/mockProducts";
 import type { Product } from "@/types";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 const CATEGORIES = [
   {
