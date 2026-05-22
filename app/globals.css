@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background-color: #ffffff;
+  color: #000613;
+  font-family: var(--font-body), "DM Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), "Bodoni Moda", serif;
+}
+
+/* Sharp corners across the board */
+input, button, select, textarea {
+  border-radius: 0 !important;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 1px solid #001f3f;
+  outline-offset: 2px;
+}
+
+/* Bottom-border only inputs (luxury stationery) */
+.input-line {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #c4c6cf;
+  padding: 8px 0;
+  width: 100%;
+}
+.input-line:focus {
+  border-bottom-color: #000613;
+  outline: none;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: #c4c6cf; }
+::-webkit-scrollbar-track { background: transparent; }
+
+.luxury-gradient {
+  background: linear-gradient(135deg, #000613 0%, #001f3f 50%, #182024 100%);
+}
