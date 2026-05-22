@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { supabaseServer } from "@/lib/supabaseServer";
+import { supabasePublic } from "@/lib/supabaseServer";
 import { formatNaira } from "@/lib/formatCurrency";
 import { MOCK_PRODUCTS } from "@/lib/mockProducts";
 import AddToCart from "./AddToCart";
@@ -15,7 +15,7 @@ export default async function ProductDetail({ params }: { params: { id: string }
     product = MOCK_PRODUCTS.find((p) => p.id === params.id) || null;
   } else {
     try {
-      const supabase = supabaseServer();
+      const supabase = supabasePublic();
       const { data } = await supabase
         .from("products")
         .select("*")

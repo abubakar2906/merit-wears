@@ -95,21 +95,40 @@ export default function ShopClient({ products }: { products: Product[] }) {
         </div>
       </div>
 
-      <p className="text-label-sm uppercase tracking-widest text-secondary mb-stack-sm">
+      <motion.p
+        key={"count-" + category + sort}
+        initial={{ opacity: 0, y: -4 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="text-label-sm uppercase tracking-widest text-secondary mb-stack-sm"
+      >
         {filtered.length} {filtered.length === 1 ? "Piece" : "Pieces"}
-      </p>
+      </motion.p>
 
-      <AnimatePresence mode="popLayout">
+      <AnimatePresence mode="wait">
         <motion.div
           key={category + sort}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+          variants={{
+            hidden: { opacity: 0 },
+            show: { opacity: 1, transition: { staggerChildren: 0.05, delayChildren: 0.05 } },
+            exit: { opacity: 0, transition: { duration: 0.15 } }
+          }}
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter"
         >
           {filtered.map((p) => (
-            <ProductCard key={p.id} product={p} />
+            <motion.div
+              key={p.id}
+              variants={{
+                hidden: { opacity: 0, y: 16 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } },
+                exit: { opacity: 0, y: -8, transition: { duration: 0.15 } }
+              }}
+            >
+              <ProductCard product={p} />
+            </motion.div>
           ))}
           {filtered.length === 0 && (
             <p className="col-span-full text-center text-secondary py-stack-lg">

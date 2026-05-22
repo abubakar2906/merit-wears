@@ -29,6 +29,14 @@ export function supabaseRoute() {
   });
 }
 
+// Public read-only client (no cookies, no auth context).
+// Safe to use inside cached/ISR Server Components for public catalog data.
+export function supabasePublic() {
+  return createClient(SUPABASE_URL, SUPABASE_ANON, {
+    auth: { persistSession: false, autoRefreshToken: false }
+  });
+}
+
 // Privileged client (server-only). Bypasses RLS. Use sparingly.
 export function supabaseAdmin() {
   return createClient(SUPABASE_URL, SUPABASE_SERVICE, {

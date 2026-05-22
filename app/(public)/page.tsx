@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Scissors, Award, Truck, Sparkles, Quote, Gem } from "lucide-react";
-import { supabaseServer } from "@/lib/supabaseServer";
+import { supabasePublic } from "@/lib/supabaseServer";
 import ProductCard from "@/components/products/ProductCard";
 import Hero from "@/components/home/Hero";
 import Marquee from "@/components/home/Marquee";
@@ -60,7 +60,7 @@ const PILLARS = [
 export default async function HomePage() {
   let featured: Product[] = [];
   try {
-    const supabase = supabaseServer();
+    const supabase = supabasePublic();
     const { data } = await supabase
       .from("products")
       .select("*")

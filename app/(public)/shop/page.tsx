@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { supabaseServer } from "@/lib/supabaseServer";
+import { supabasePublic } from "@/lib/supabaseServer";
 import { getMockProducts } from "@/lib/mockProducts";
 import ShopClient from "./ShopClient";
 import type { Product } from "@/types";
@@ -9,7 +9,7 @@ export const revalidate = 60;
 export default async function ShopPage() {
   let products: Product[] = [];
   try {
-    const supabase = supabaseServer();
+    const supabase = supabasePublic();
     const { data } = await supabase
       .from("products")
       .select("*")
