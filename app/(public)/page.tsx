@@ -14,26 +14,38 @@ export const revalidate = 60;
 
 const CATEGORIES = [
   {
-    key: "clothing",
-    label: "01 — Apparel",
-    title: "Native Kaftans",
+    key: "native",
+    label: "01 — Heritage",
+    title: "Native Attires",
     img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCCAORLLGefRdygHjtNQxmT43oQSl3-imjfPqa8450WVo8X5nIjyKR0VUqzU_vuDofpxEPYr4XLq82D8ER9gU_w7b_3jxEG2xvzKstC_Xh_cc3zS5BeOhzpe2OYpWfRIaMHtGjNabTDOL-tsR7WRP7W4ZrUJMmXIRnfqeneiwwNuDdPbwekFqKDhaz2E_gdrca5O5kLEpKAvGHL8EanRUSRBBm3Xl2Fuq7Mx-TLeOZDz0nm7W9PBntY2mTaACPKVysNbvEvRu43B_4"
   },
   {
+    key: "casual",
+    label: "02 — Off-Duty",
+    title: "Casual Wears",
+    img: "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1400&q=80"
+  },
+  {
+    key: "corporate",
+    label: "03 — Boardroom",
+    title: "Corporate Wears",
+    img: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1400&q=80"
+  },
+  {
     key: "shoes",
-    label: "02 — Footwear",
-    title: "Footwear",
+    label: "04 — Footwear",
+    title: "Foot-wears",
     img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCHSzuBxb7ptroCAI841BnLmLo-VNcAq03TAoN8YQLd4EtnQOzvXcx7hF9tDP0lNENpeSxv2wodDG7GC5EzenCB5kaBmMs5ldp2MO31I-_dYp4NDuFJx0ekZ-RxZY54FI2bcmMFuVzfso9fR5LNJnzU2n6P7iKQzrYF7uaQHcbi3xtPbHNeOovq7kf-Dskjz_j6VMf3UxB5hAwalKDUA6Du87A_kJ3JZYjJSEUhx0E63UzXP2w1dkYEQtl2QMnvIhdT82lLsS8Aq-Q"
   },
   {
     key: "watches",
-    label: "03 — Horology",
+    label: "05 — Horology",
     title: "Watches",
     img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1400&q=80"
   },
   {
     key: "accessories",
-    label: "04 — Objects",
+    label: "06 — Objects",
     title: "Accessories",
     img: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1400&q=80"
   }
@@ -104,7 +116,7 @@ export default async function HomePage() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
           {CATEGORIES.map((c, i) => (
             <TiltCard
               key={c.key}
@@ -284,7 +296,7 @@ export default async function HomePage() {
             />
             <p className="font-display text-2xl md:text-4xl text-primary leading-[1.2] italic">
               “We did not build Merit Wears to chase trends. We built it for
-              the man who knows precisely who he is — and dresses for the
+              the people who knows precisely who they are — and dresses for the
               decade ahead, not the season behind.
               <br />
               <br />
@@ -294,7 +306,7 @@ export default async function HomePage() {
             <div className="mt-stack-lg flex items-center gap-3">
               <span className="h-px w-12 bg-primary" />
               <p className="text-label-sm uppercase tracking-[0.25em] text-primary">
-                Adeyemi Merit — Founder &amp; CEO, House of Merit
+                Founder &amp; CEO, Merit Luxury Wears Limited
               </p>
             </div>
           </Reveal>

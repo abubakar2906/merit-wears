@@ -8,8 +8,10 @@ import type { Category, Product } from "@/types";
 
 const CATS: { key: "all" | Category; label: string }[] = [
   { key: "all", label: "All" },
-  { key: "clothing", label: "Kaftans" },
-  { key: "shoes", label: "Footwear" },
+  { key: "native", label: "Native Attires" },
+  { key: "casual", label: "Casual Wears" },
+  { key: "corporate", label: "Corporate Wears" },
+  { key: "shoes", label: "Foot-wears" },
   { key: "watches", label: "Watches" },
   { key: "accessories", label: "Accessories" }
 ];

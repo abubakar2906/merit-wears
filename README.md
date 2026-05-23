@@ -1,4 +1,4 @@
-# Merit Wears
+# Merit Luxury Wears Limited
 
 Luxury fashion e-commerce — Navy & Silver editorial identity. Next.js 14 (App Router) + Supabase + Zustand. WhatsApp click-to-order checkout.
 

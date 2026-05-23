@@ -1,4 +1,10 @@
-export type Category = "clothing" | "shoes" | "watches" | "accessories";
+export type Category =
+  | "native"
+  | "casual"
+  | "corporate"
+  | "shoes"
+  | "watches"
+  | "accessories";
 
 export type OrderStatus =
   | "pending"

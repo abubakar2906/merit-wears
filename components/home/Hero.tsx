@@ -25,7 +25,7 @@ export default function Hero() {
       <motion.div style={{ y, scale }} className="absolute inset-0">
         <Image
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs1Ouio1Py2RHTxOpsy0bmez3Tn1aDrx9nOOTjiZhMYd6tSIofR_6utj8FzEyuloYoWg7n8TnjUM7Y4qb21zLIVjZ0uemZ6pUtzBshd_UNAm_6h-Unpp2rMVHfrCfROVDCcG5NNFvbwM4O6Sjri6b2D-ict6zX4D0Ila1QErfbt2UB5zB9HYtg_nt3vlJ-hKJ0IiKCUjpOFmnqIqDy2GrF_29HGSiiG6grTyPY0ycJ3X2jTPKd7Qw44I-ey4O2AVrN5ltNs9BsbrM"
-          alt="Merit Wears Editorial"
+          alt="Merit Luxury Wears Editorial"
           fill
           priority
           sizes="100vw"

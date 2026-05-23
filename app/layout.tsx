@@ -17,9 +17,9 @@ const body = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Merit Wears — Luxury Fashion",
+  title: "Merit Luxury Wears Limited — Luxury Fashion",
   description:
-    "Merit Wears: Navy & Silver luxury kaftans, footwear, and watches. The art of discipline in modern tailoring."
+    "Merit Luxury Wears Limited: Native attires, casual & corporate wears, foot-wears, watches and accessories. The art of discipline in modern tailoring."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

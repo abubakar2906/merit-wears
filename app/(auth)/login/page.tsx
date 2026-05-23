@@ -42,7 +42,7 @@ function LoginInner() {
     <div className="min-h-screen flex flex-col md:flex-row">
       <section className="hidden md:flex md:w-1/2 luxury-gradient relative items-center justify-center p-margin-desktop">
         <div className="relative z-10 text-center max-w-md">
-          <h1 className="font-display text-display-lg text-white mb-stack-sm">Merit Wears</h1>
+          <h1 className="font-display text-display-lg text-white mb-stack-sm">Merit Luxury Wears</h1>
           <p className="text-body-lg text-white/80 italic mb-stack-lg">
             The art of discipline in modern tailoring.
           </p>

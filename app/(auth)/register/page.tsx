@@ -36,7 +36,7 @@ export default function RegisterPage() {
     <div className="min-h-screen flex flex-col md:flex-row">
       <section className="hidden md:flex md:w-1/2 luxury-gradient items-center justify-center p-margin-desktop">
         <div className="text-center max-w-md">
-          <h1 className="font-display text-display-lg text-white mb-stack-sm">Merit Wears</h1>
+          <h1 className="font-display text-display-lg text-white mb-stack-sm">Merit Luxury Wears</h1>
           <p className="text-body-lg text-white/80 italic mb-stack-lg">
             Experience the curated excellence of our latest collections.
           </p>

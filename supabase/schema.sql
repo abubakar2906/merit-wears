@@ -1,4 +1,4 @@
--- Merit Wears — Supabase schema (run in SQL Editor)
+-- Merit Luxury Wears Limited — Supabase schema (run in SQL Editor)
 -- Make sure to enable Storage and create a public bucket named "product-images".
 
 -- 1. Profiles
@@ -46,7 +46,7 @@ create table if not exists public.products (
   name text not null,
   description text,
   price numeric(10,2) not null,
-  category text not null check (category in ('clothing','shoes','watches','accessories')),
+  category text not null check (category in ('native','casual','corporate','shoes','watches','accessories')),
   image_urls text[] not null default '{}',
   sizes text[] not null default '{}',
   stock_quantity integer not null default 0,

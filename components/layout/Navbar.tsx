@@ -9,8 +9,10 @@ import { useAuth } from "@/hooks/useAuth";
 
 const NAV_LINKS = [
   { href: "/shop", label: "All Products" },
-  { href: "/shop?category=clothing", label: "Native Kaftans" },
-  { href: "/shop?category=shoes", label: "Footwear" },
+  { href: "/shop?category=native", label: "Native Attires" },
+  { href: "/shop?category=casual", label: "Casual" },
+  { href: "/shop?category=corporate", label: "Corporate" },
+  { href: "/shop?category=shoes", label: "Foot-wears" },
   { href: "/shop?category=watches", label: "Watches" }
 ];
 
@@ -91,7 +93,7 @@ export default function Navbar() {
             href="/"
             className="font-display text-2xl md:text-headline-md font-bold tracking-tight text-primary text-center whitespace-nowrap"
           >
-            Merit Wears
+            Merit Luxury Wears
           </Link>
 
           {/* Right */}
@@ -148,7 +150,7 @@ export default function Navbar() {
               className="fixed top-0 left-0 bottom-0 z-[70] w-[85%] max-w-sm bg-surface md:hidden flex flex-col shadow-2xl"
             >
               <div className="flex items-center justify-between px-margin-mobile py-5 border-b border-outline-variant">
-                <span className="font-display text-xl font-bold text-primary">Merit Wears</span>
+                <span className="font-display text-xl font-bold text-primary">Merit Luxury Wears</span>
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"

@@ -3,7 +3,14 @@
 import { useState } from "react";
 import type { Product, Category } from "@/types";
 
-const CATEGORIES: Category[] = ["clothing", "shoes", "watches"];
+const CATEGORIES: Category[] = [
+  "native",
+  "casual",
+  "corporate",
+  "shoes",
+  "watches",
+  "accessories"
+];
 
 export default function ProductForm({
   product,
@@ -17,7 +24,7 @@ export default function ProductForm({
   const [name, setName] = useState(product?.name ?? "");
   const [description, setDescription] = useState(product?.description ?? "");
   const [price, setPrice] = useState<number | "">(product?.price ?? "");
-  const [category, setCategory] = useState<Category>((product?.category as Category) ?? "clothing");
+  const [category, setCategory] = useState<Category>((product?.category as Category) ?? "native");
   const [sizes, setSizes] = useState<string>((product?.sizes ?? []).join(","));
   const [stock, setStock] = useState<number | "">(product?.stock_quantity ?? 0);
   const [isActive, setIsActive] = useState(product?.is_active ?? true);

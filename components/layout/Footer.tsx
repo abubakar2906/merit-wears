@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-surface border-t border-outline-variant mt-section-gap">
       <div className="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container mx-auto gap-stack-md">
         <Link href="/" className="font-display text-headline-md text-primary">
-          Merit Wears
+          Merit Luxury Wears
         </Link>
         <div className="flex flex-wrap justify-center gap-stack-sm md:gap-stack-md">
           <Link href="/shop" className="text-secondary hover:text-primary text-label-sm uppercase tracking-widest">
@@ -25,7 +25,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="text-secondary text-body-md text-center md:text-right">
-          © {new Date().getFullYear()} Merit Wears. All Rights Reserved.
+          © {new Date().getFullYear()} Merit Luxury Wears Limited. All Rights Reserved.
         </p>
       </div>
     </footer>

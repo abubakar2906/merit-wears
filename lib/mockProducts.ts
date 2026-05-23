@@ -24,12 +24,20 @@ const make = (
 
 // Curated Unsplash imagery — luxury menswear, footwear, horology, accessories.
 const IMG = {
-  // Native kaftans / agbada / luxury menswear
+  // Native attires (kaftans / agbada)
   kaftan1: "https://images.unsplash.com/photo-1622519407650-3df9883f76a5?auto=format&fit=crop&w=1200&q=80",
   kaftan2: "https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1200&q=80",
   kaftan3: "https://images.unsplash.com/photo-1593030103066-0093718efeb9?auto=format&fit=crop&w=1200&q=80",
   kaftan4: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80",
   kaftan5: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80",
+  // Casual wears
+  casual1: "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1200&q=80",
+  casual2: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=80",
+  casual3: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1200&q=80",
+  // Corporate wears
+  corp1: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1200&q=80",
+  corp2: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&w=1200&q=80",
+  corp3: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
   // Footwear
   shoe1: "https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=1200&q=80",
   shoe2: "https://images.unsplash.com/photo-1582897085656-c636d006a246?auto=format&fit=crop&w=1200&q=80",
@@ -52,7 +60,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description:
       "Hand-tailored agbada in midnight wool-blend. Sterling-thread embroidery at the placket and cuffs. Cut for a relaxed, columnar silhouette.",
     price: 285000,
-    category: "clothing",
+    category: "native",
     images: [IMG.kaftan1, IMG.kaftan2],
     sizes: ["S", "M", "L", "XL", "XXL"],
     stock_quantity: 12,
@@ -63,7 +71,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description:
       "Three-piece ensemble — flowing outer robe, fitted inner sokoto, and cap. Onyx-black aso-oke with tonal silver thread.",
     price: 420000,
-    category: "clothing",
+    category: "native",
     images: [IMG.kaftan2, IMG.kaftan3],
     sizes: ["M", "L", "XL", "XXL"],
     stock_quantity: 6,
@@ -74,7 +82,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description:
       "Lightweight Italian linen, dyed in atelier indigo. An everyday silhouette for the modern wardrobe.",
     price: 165000,
-    category: "clothing",
+    category: "native",
     images: [IMG.kaftan3, IMG.kaftan4],
     sizes: ["S", "M", "L", "XL"],
     stock_quantity: 18,
@@ -85,10 +93,78 @@ export const MOCK_PRODUCTS: Product[] = [
     description:
       "Minimalist tunic-cut kaftan in ivory cotton-silk, finished with a single navy contrast pleat at the hem.",
     price: 145000,
-    category: "clothing",
+    category: "native",
     images: [IMG.kaftan4, IMG.kaftan5],
     sizes: ["S", "M", "L", "XL"],
     stock_quantity: 10,
+    is_featured: false
+  }),
+
+  make(15, {
+    name: "Marina Linen Camp Shirt",
+    description:
+      "Relaxed-collar linen shirt in atelier indigo. Mother-of-pearl buttons. Weekend cut.",
+    price: 95000,
+    category: "casual",
+    images: [IMG.casual1, IMG.casual2],
+    sizes: ["S", "M", "L", "XL"],
+    stock_quantity: 22,
+    is_featured: true
+  }),
+  make(16, {
+    name: "House Knit Polo — Slate",
+    description:
+      "Fine-gauge merino polo, refined silver button placket. Day to dusk.",
+    price: 78000,
+    category: "casual",
+    images: [IMG.casual2, IMG.casual3],
+    sizes: ["S", "M", "L", "XL"],
+    stock_quantity: 28,
+    is_featured: false
+  }),
+  make(17, {
+    name: "Atelier Chino — Stone",
+    description:
+      "Tailored Italian cotton chino with a clean break. The everyday foundation.",
+    price: 88000,
+    category: "casual",
+    images: [IMG.casual3, IMG.casual1],
+    sizes: ["30", "32", "34", "36", "38"],
+    stock_quantity: 20,
+    is_featured: false
+  }),
+
+  make(18, {
+    name: "Sterling Two-Piece — Midnight",
+    description:
+      "Single-breasted suit in deep navy super-120s wool. Hand-finished lapel, half-canvas construction.",
+    price: 480000,
+    category: "corporate",
+    images: [IMG.corp1, IMG.corp2],
+    sizes: ["38", "40", "42", "44", "46"],
+    stock_quantity: 8,
+    is_featured: true
+  }),
+  make(19, {
+    name: "Onyx Three-Piece Suit",
+    description:
+      "Onyx wool three-piece with peak lapel and matching waistcoat. Boardroom precision.",
+    price: 560000,
+    category: "corporate",
+    images: [IMG.corp2, IMG.corp3],
+    sizes: ["38", "40", "42", "44", "46"],
+    stock_quantity: 5,
+    is_featured: false
+  }),
+  make(20, {
+    name: "House Dress Shirt — Ivory",
+    description:
+      "Two-fold Egyptian cotton dress shirt. Cutaway collar, French cuff. Quietly impeccable.",
+    price: 65000,
+    category: "corporate",
+    images: [IMG.corp3, IMG.corp1],
+    sizes: ["S", "M", "L", "XL"],
+    stock_quantity: 30,
     is_featured: false
   }),
 

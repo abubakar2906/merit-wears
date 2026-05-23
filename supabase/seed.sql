@@ -1,34 +1,34 @@
--- Merit Wears — sample product seed.
+-- Merit Luxury Wears Limited — sample product seed.
 -- Run AFTER schema.sql. Safe to re-run (uses ON CONFLICT on name).
 
 create unique index if not exists products_name_key on public.products (name);
 
 insert into public.products (name, description, price, category, image_urls, sizes, stock_quantity, is_featured) values
--- Kaftans / clothing
+-- Native attires (kaftans / agbada)
 ('Sterling Navy Kaftan',
  'Hand-tailored agbada in midnight wool-blend. Sterling-thread embroidery at the placket and cuffs. Cut for a relaxed, columnar silhouette.',
- 285000, 'clothing',
+ 285000, 'native',
  array['https://images.unsplash.com/photo-1622519407650-3df9883f76a5?auto=format&fit=crop&w=1200&q=80',
        'https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1200&q=80'],
  array['S','M','L','XL','XXL'], 12, true),
 
 ('Onyx Ceremonial Agbada',
  'Three-piece ensemble — flowing outer robe, fitted inner sokoto, and cap. Onyx-black aso-oke with tonal silver thread.',
- 420000, 'clothing',
+ 420000, 'native',
  array['https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1200&q=80',
        'https://images.unsplash.com/photo-1593030103066-0093718efeb9?auto=format&fit=crop&w=1200&q=80'],
  array['M','L','XL','XXL'], 6, true),
 
 ('Marina Linen Kaftan',
  'Lightweight Italian linen, dyed in atelier indigo. An everyday silhouette for the modern wardrobe.',
- 165000, 'clothing',
+ 165000, 'native',
  array['https://images.unsplash.com/photo-1593030103066-0093718efeb9?auto=format&fit=crop&w=1200&q=80',
        'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80'],
  array['S','M','L','XL'], 18, false),
 
 ('House Tunic — Ivory',
  'Minimalist tunic-cut kaftan in ivory cotton-silk, finished with a single navy contrast pleat at the hem.',
- 145000, 'clothing',
+ 145000, 'native',
  array['https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80',
        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80'],
  array['S','M','L','XL'], 10, false),
