@@ -14,16 +14,37 @@ create table if not exists public.profiles (
 
 alter table public.profiles enable row level security;
 
+-- Helper: bypass RLS to check if the current user is an admin.
+-- Using SECURITY DEFINER prevents the recursive policy lookup that
+-- would otherwise occur when a profiles policy needs to read profiles.
+create or replace function public.is_admin()
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (
+    select 1 from public.profiles
+    where id = auth.uid() and role = 'admin'
+  );
+$$;
+
+grant execute on function public.is_admin() to anon, authenticated;
+
 drop policy if exists "profiles_select_own_or_admin" on public.profiles;
 create policy "profiles_select_own_or_admin" on public.profiles
   for select using (
-    auth.uid() = id
-    or exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin')
+    auth.uid() = id or public.is_admin()
   );
 
 drop policy if exists "profiles_update_own" on public.profiles;
 create policy "profiles_update_own" on public.profiles
   for update using (auth.uid() = id);
+
+drop policy if exists "profiles_admin_update" on public.profiles;
+create policy "profiles_admin_update" on public.profiles
+  for update using (public.is_admin());
 
 -- 2. Trigger to insert profile row on signup
 create or replace function public.handle_new_user()
@@ -60,16 +81,12 @@ alter table public.products enable row level security;
 
 drop policy if exists "products_public_select" on public.products;
 create policy "products_public_select" on public.products
-  for select using (is_active = true
-    or exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin'));
+  for select using (is_active = true or public.is_admin());
 
 drop policy if exists "products_admin_write" on public.products;
 create policy "products_admin_write" on public.products
-  for all using (
-    exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin')
-  ) with check (
-    exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin')
-  );
+  for all using (public.is_admin())
+  with check (public.is_admin());
 
 -- 4. Orders
 create table if not exists public.orders (
@@ -93,10 +110,7 @@ alter table public.orders enable row level security;
 
 drop policy if exists "orders_select_own_or_admin" on public.orders;
 create policy "orders_select_own_or_admin" on public.orders
-  for select using (
-    auth.uid() = user_id
-    or exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin')
-  );
+  for select using (auth.uid() = user_id or public.is_admin());
 
 drop policy if exists "orders_insert_self" on public.orders;
 create policy "orders_insert_self" on public.orders
@@ -104,9 +118,7 @@ create policy "orders_insert_self" on public.orders
 
 drop policy if exists "orders_update_admin" on public.orders;
 create policy "orders_update_admin" on public.orders
-  for update using (
-    exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin')
-  );
+  for update using (public.is_admin());
 
 -- 5. Storage bucket (run in dashboard or):
 -- insert into storage.buckets (id, name, public) values ('product-images', 'product-images', true)

@@ -5,13 +5,13 @@ export async function middleware(req: NextRequest) {
   const res = NextResponse.next();
   const { pathname } = req.nextUrl;
 
-  if (!pathname.startsWith("/admin")) return res;
+  if (!pathname.startsWith("/admin") || pathname === "/admin/login") return res;
 
   const supabase = createMiddlewareClient({ req, res });
   const { data: { session } } = await supabase.auth.getSession();
   if (!session) {
     const url = req.nextUrl.clone();
-    url.pathname = "/login";
+    url.pathname = "/admin/login";
     url.searchParams.set("redirect_to", pathname);
     return NextResponse.redirect(url);
   }
@@ -22,7 +22,7 @@ export async function middleware(req: NextRequest) {
     .single();
   if ((profile as any)?.role !== "admin") {
     const url = req.nextUrl.clone();
-    url.pathname = "/login";
+    url.pathname = "/";
     return NextResponse.redirect(url);
   }
   return res;

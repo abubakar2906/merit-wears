@@ -3,7 +3,7 @@
 import { Suspense, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { supabaseBrowser } from "@/lib/supabase";
+import { isSupabaseConfigured, supabaseBrowser } from "@/lib/supabase";
 
 export default function LoginPage() {
   return (
@@ -28,6 +28,13 @@ function LoginInner() {
     e.preventDefault();
     setError(null);
     setLoading(true);
+    if (!isSupabaseConfigured()) {
+      setLoading(false);
+      setError(
+        "Supabase is not configured. Check NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in .env.local, then restart npm run dev."
+      );
+      return;
+    }
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setLoading(false);
     if (error) {
