@@ -6,22 +6,27 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, ShoppingBag, User, X, Search, ChevronRight } from "lucide-react";
 import { useCart } from "@/hooks/useCart";
 import { useAuth } from "@/hooks/useAuth";
+import { useTranslations } from "next-intl";
 
-const NAV_LINKS = [
-  { href: "/shop", label: "All Products" },
-  { href: "/shop?category=native", label: "Native Attires" },
-  { href: "/shop?category=casual", label: "Casual" },
-  { href: "/shop?category=corporate", label: "Corporate" },
-  { href: "/shop?category=shoes", label: "Foot-wears" },
-  { href: "/shop?category=watches", label: "Watches" }
-];
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
+  const t = useTranslations("Navigation");
+  const tm = useTranslations("Marquee");
   const count = useCart((s) => s.itemCount());
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { user } = useAuth();
+
+  const NAV_LINKS = [
+    { href: "/shop", label: t("allProducts") },
+    { href: "/shop?category=native", label: t("native") },
+    { href: "/shop?category=casual", label: t("casual") },
+    { href: "/shop?category=corporate", label: t("corporate") },
+    { href: "/shop?category=shoes", label: t("shoes") },
+    { href: "/shop?category=watches", label: t("watches") }
+  ];
 
   useEffect(() => setMounted(true), []);
 
@@ -46,11 +51,11 @@ export default function Navbar() {
         <div className="flex whitespace-nowrap py-2 animate-marquee gap-16 text-label-sm uppercase tracking-[0.3em]">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex items-center gap-16 shrink-0 px-8">
-              <span>Complimentary delivery within Lagos</span>
+              <span>{tm("delivery")}</span>
               <span className="opacity-50">◆</span>
-              <span>Bespoke embroidery available</span>
+              <span>{tm("embroidery")}</span>
               <span className="opacity-50">◆</span>
-              <span>The Midnight Sterling Collection — Out Now</span>
+              <span>{tm("collection")}</span>
               <span className="opacity-50">◆</span>
             </div>
           ))}
@@ -98,6 +103,9 @@ export default function Navbar() {
 
           {/* Right */}
           <div className="flex items-center gap-1 justify-end">
+            <div className="hidden md:block mr-2">
+              <LanguageSwitcher />
+            </div>
             <Link
               href="/shop"
               className="hidden md:inline-flex w-10 h-10 items-center justify-center text-primary hover:bg-surface-container-low transition-colors"
@@ -196,7 +204,7 @@ export default function Navbar() {
                     >
                       <User size={18} strokeWidth={1.5} />
                       <span className="text-label-md uppercase tracking-[0.15em]">
-                        {user ? "My Account" : "Sign In"}
+                        {user ? t("myAccount") : t("login")}
                       </span>
                     </Link>
                   </li>
@@ -207,7 +215,7 @@ export default function Navbar() {
                       className="flex items-center gap-3 px-margin-mobile py-4 border-b border-outline-variant/60"
                     >
                       <ShoppingBag size={18} strokeWidth={1.5} />
-                      <span className="text-label-md uppercase tracking-[0.15em]">Cart ({mounted ? count : 0})</span>
+                      <span className="text-label-md uppercase tracking-[0.15em]">{t("cart")} ({mounted ? count : 0})</span>
                     </Link>
                   </li>
                 </ul>

@@ -1,0 +1,75 @@
+{
+  "Common": {
+    "loading": "Loading...",
+    "error": "Something went wrong.",
+    "tryAgain": "Try Again"
+  },
+  "Navigation": {
+    "allProducts": "All Products",
+    "native": "Native Attires",
+    "casual": "Casual",
+    "corporate": "Corporate",
+    "shoes": "Foot-wears",
+    "watches": "Watches",
+    "cart": "Cart",
+    "login": "Sign In",
+    "myAccount": "My Account",
+    "language": "EN"
+  },
+  "Marquee": {
+    "delivery": "Complimentary delivery within Lagos",
+    "embroidery": "Bespoke embroidery available",
+    "collection": "The Midnight Sterling Collection — Out Now"
+  },
+  "Footer": {
+    "shop": "Shop",
+    "account": "Account",
+    "whatsapp": "WhatsApp Support",
+    "rights": "© {year} Merit Luxury Wears Limited. All Rights Reserved."
+  },
+  "Hero": {
+    "collection": "The Midnight Sterling Collection — FW 26",
+    "headline": "Redefining the Modern Kaftan",
+    "subheadline": "Precision tailoring meets timeless elegance — a Navy & Silver study in restraint, crafted for the discerning modernist.",
+    "shop": "Shop the Collection",
+    "native": "Native Kaftans",
+    "atelierNoteTitle": "Atelier Note",
+    "atelierNote": "“Quiet luxury is not the absence of detail — it is the discipline of the right detail.”",
+    "atelierAuthor": "— House of Merit",
+    "scroll": "Scroll"
+  },
+  "Home": {
+    "categoriesLabel": "The Wardrobe",
+    "categoriesTitle1": "Curated Essentials,",
+    "categoriesTitle2": "disciplined in form.",
+    "categoriesLink": "View All Collections →",
+    "lookbookLabel": "Lookbook · Chapter 01",
+    "lookbookTitle1": "The Quiet",
+    "lookbookTitle2": "Authority",
+    "lookbookDesc": "Photographed at dawn in the marble courtyards of Marina, Lagos. A study in stillness — the kaftan reframed as architecture, the wearer as monument.",
+    "lookbookLink": "Explore the Edit",
+    "statLooks": "Looks",
+    "statTailors": "Tailors",
+    "statCities": "Cities",
+    "focusLabel": "Focus",
+    "focusTitle": "Masterpiece Embroidery",
+    "focusDesc": "A rotating curation of new arrivals and atelier favourites.",
+    "emptyProducts": "Configure Supabase & add products in the admin to populate this gallery.",
+    "pillarsLabel": "The House Code",
+    "pillarsTitle": "Three Pillars of Craft",
+    "pillar1Label": "Bespoke Atelier",
+    "pillar1Desc": "Hand-cut, hand-stitched. Each garment passes through a single tailor — start to finish.",
+    "pillar2Label": "Heritage Materials",
+    "pillar2Desc": "Italian wools, Aso-oke from Iseyin, sterling-thread embroidery sourced from family looms.",
+    "pillar3Label": "White-Glove Delivery",
+    "pillar3Desc": "Concierge dispatch within 48 hours. International orders handled with insured customs clearance.",
+    "founderNote": "A Note from the Founder",
+    "founderQuote": "“We did not build Merit Wears to chase trends. We built it for the people who knows precisely who they are — and dresses for the decade ahead, not the season behind. Every stitch in this house carries a name, a hand, a history. Thank you for wearing our work.”",
+    "founderRole": "Founder & CEO, Merit Luxury Wears Limited",
+    "codaLabel": "Coda",
+    "codaTitle1": "The Art of",
+    "codaTitle2": "Discipline.",
+    "codaDesc": "A heritage rooted in craftsmanship, distilled into a contemporary uniform of restraint, depth, and effortless elegance. We do not chase the season — we outlast it.",
+    "codaLink": "Enter the House"
+  }
+}

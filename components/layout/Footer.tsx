@@ -1,6 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
   const wa = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
   return (
     <footer className="bg-surface border-t border-outline-variant mt-section-gap">
@@ -10,10 +16,10 @@ export default function Footer() {
         </Link>
         <div className="flex flex-wrap justify-center gap-stack-sm md:gap-stack-md">
           <Link href="/shop" className="text-secondary hover:text-primary text-label-sm uppercase tracking-widest">
-            Shop
+            {t("shop")}
           </Link>
           <Link href="/account" className="text-secondary hover:text-primary text-label-sm uppercase tracking-widest">
-            Account
+            {t("account")}
           </Link>
           <a
             href={`https://wa.me/${wa}`}
@@ -21,11 +27,12 @@ export default function Footer() {
             rel="noreferrer"
             className="text-secondary hover:text-primary text-label-sm uppercase tracking-widest"
           >
-            WhatsApp Support
+            {t("whatsapp")}
           </a>
+          <LanguageSwitcher />
         </div>
         <p className="text-secondary text-body-md text-center md:text-right">
-          © {new Date().getFullYear()} Merit Luxury Wears Limited. All Rights Reserved.
+          {t("rights", { year: new Date().getFullYear() })}
         </p>
       </div>
     </footer>

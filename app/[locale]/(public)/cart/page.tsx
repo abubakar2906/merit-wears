@@ -13,16 +13,21 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <div className="px-margin-mobile md:px-margin-desktop max-w-container mx-auto py-section-gap text-center">
+      <div className="px-margin-mobile md:px-margin-desktop max-w-container mx-auto py-section-gap flex flex-col items-center justify-center min-h-[60vh]">
+        <div className="w-24 h-24 rounded-full bg-surface-container-low border border-outline-variant flex items-center justify-center mb-stack-lg text-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
         <h1 className="font-display text-headline-lg text-primary mb-stack-md">
           Your Bag is Empty
         </h1>
-        <p className="text-secondary mb-stack-lg">Begin curating your wardrobe.</p>
+        <p className="text-secondary text-body-lg mb-stack-lg max-w-md text-center">
+          The pieces you select will appear here. Begin curating your wardrobe.
+        </p>
         <Link
           href="/shop"
-          className="inline-block bg-primary text-on-primary px-10 py-4 text-label-md uppercase tracking-widest hover:bg-primary-container"
+          className="inline-flex items-center justify-center border border-primary text-primary px-10 py-4 text-label-md uppercase tracking-widest hover:bg-surface-container-low transition-colors"
         >
-          Browse the Shop
+          Browse the Edit
         </Link>
       </div>
     );

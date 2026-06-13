@@ -47,7 +47,13 @@ export default async function AdminDashboard() {
             href="/admin/orders"
             className="border border-outline-variant px-4 py-2 text-label-md uppercase tracking-widest hover:bg-surface-container"
           >
-            View Orders
+            Orders
+          </Link>
+          <Link
+            href="/admin/promos"
+            className="border border-outline-variant px-4 py-2 text-label-md uppercase tracking-widest hover:bg-surface-container"
+          >
+            Promos
           </Link>
         </div>
       </header>

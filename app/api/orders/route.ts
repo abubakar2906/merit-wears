@@ -56,8 +56,7 @@ export async function POST(req: NextRequest) {
       items,
       total_amount,
       notes: notes || null,
-      status: "pending",
-      whatsapp_sent: false
+      status: "pending"
     })
     .select()
     .single();

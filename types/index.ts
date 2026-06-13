@@ -58,7 +58,16 @@ export interface Order {
   items: CartItem[];
   total_amount: number;
   status: OrderStatus;
-  whatsapp_sent: boolean;
+  payment_status: "unpaid" | "pending" | "paid" | "failed" | "refunded";
+  payment_reference?: string;
+  monnify_transaction_ref?: string;
+  amount_expected?: number;
+  amount_paid?: number;
+  payment_channel?: string;
+  promo_code?: string;
+  discount_amount: number;
+  idempotency_hash?: string;
+  checkout_url?: string;
   notes: string | null;
   created_at: string;
   updated_at: string;

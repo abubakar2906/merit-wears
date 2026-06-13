@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { useAuth } from "@/hooks/useAuth";
@@ -118,7 +119,21 @@ export default function AccountPage() {
           <section className="lg:col-span-2">
             <h2 className="font-display text-headline-md text-primary mb-stack-md">Order History</h2>
             {orders.length === 0 ? (
-              <p className="text-secondary">No orders yet.</p>
+              <div className="border border-outline-variant py-section-gap flex flex-col items-center justify-center bg-surface-container-low text-center">
+                <div className="w-16 h-16 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-stack-md text-secondary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22v-9"/><path d="M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 .96 1.67v9.52a1.93 1.93 0 0 1-.96 1.67l-4.2 2.36a1.67 1.67 0 0 1-1.63 0l-4.2-2.36a1.93 1.93 0 0 1-.96-1.67V6.24a1.93 1.93 0 0 1 .96-1.67Z"/><path d="M20 5.5 12 10 4 5.5"/><path d="m7.5 4.21 4.5 2.53"/></svg>
+                </div>
+                <h3 className="font-display text-2xl text-primary mb-2">No Orders Yet</h3>
+                <p className="text-secondary text-body-md mb-stack-md max-w-xs">
+                  You haven't placed any orders. Your order history will appear here.
+                </p>
+                <Link
+                  href="/shop"
+                  className="text-label-sm uppercase tracking-widest text-primary border-b border-primary hover:border-transparent transition-colors"
+                >
+                  Start Shopping →
+                </Link>
+              </div>
             ) : (
               <div className="border border-outline-variant divide-y divide-outline-variant">
                 {orders.map((o) => (

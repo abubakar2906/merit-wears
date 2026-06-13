@@ -1,0 +1,75 @@
+{
+  "Common": {
+    "loading": "Chargement...",
+    "error": "Quelque chose s'est mal passé.",
+    "tryAgain": "Réessayer"
+  },
+  "Navigation": {
+    "allProducts": "Tous les Produits",
+    "native": "Tenues Traditionnelles",
+    "casual": "Décontracté",
+    "corporate": "Professionnel",
+    "shoes": "Chaussures",
+    "watches": "Montres",
+    "cart": "Panier",
+    "login": "Connexion",
+    "myAccount": "Mon Compte",
+    "language": "FR"
+  },
+  "Marquee": {
+    "delivery": "Livraison gratuite dans tout Lagos",
+    "embroidery": "Broderie sur mesure disponible",
+    "collection": "La Collection Midnight Sterling — Disponible"
+  },
+  "Footer": {
+    "shop": "Boutique",
+    "account": "Compte",
+    "whatsapp": "Assistance WhatsApp",
+    "rights": "© {year} Merit Luxury Wears Limited. Tous droits réservés."
+  },
+  "Hero": {
+    "collection": "La Collection Midnight Sterling — AH 26",
+    "headline": "Redéfinir le Kaftan Moderne",
+    "subheadline": "Une couture de précision rencontre une élégance intemporelle — une étude Marine et Argent en retenue, conçue pour le moderniste exigeant.",
+    "shop": "Acheter la Collection",
+    "native": "Kaftans Traditionnels",
+    "atelierNoteTitle": "Note de l'Atelier",
+    "atelierNote": "“Le luxe discret n'est pas l'absence de détails — c'est la discipline du bon détail.”",
+    "atelierAuthor": "— House of Merit",
+    "scroll": "Défiler"
+  },
+  "Home": {
+    "categoriesLabel": "La Garde-robe",
+    "categoriesTitle1": "Essentiels Organisés,",
+    "categoriesTitle2": "disciplinés dans la forme.",
+    "categoriesLink": "Voir toutes les collections →",
+    "lookbookLabel": "Lookbook · Chapitre 01",
+    "lookbookTitle1": "L'Autorité",
+    "lookbookTitle2": "Silencieuse",
+    "lookbookDesc": "Photographié à l'aube dans les cours de marbre de Marina, Lagos. Une étude de l'immobilité — le kaftan repensé comme architecture, le porteur comme monument.",
+    "lookbookLink": "Explorer la Sélection",
+    "statLooks": "Looks",
+    "statTailors": "Tailleurs",
+    "statCities": "Villes",
+    "focusLabel": "Mise en Point",
+    "focusTitle": "Broderie de Chef-d'œuvre",
+    "focusDesc": "Une sélection rotative de nouveautés et de favoris de l'atelier.",
+    "emptyProducts": "Configurez Supabase et ajoutez des produits dans l'administration pour peupler cette galerie.",
+    "pillarsLabel": "Le Code de la Maison",
+    "pillarsTitle": "Trois Piliers de l'Artisanat",
+    "pillar1Label": "Atelier sur Mesure",
+    "pillar1Desc": "Coupe à la main, couture à la main. Chaque vêtement passe par un seul tailleur — du début à la fin.",
+    "pillar2Label": "Matériaux Patrimoniaux",
+    "pillar2Desc": "Laines italiennes, Aso-oke d'Iseyin, broderies en fil d'argent provenant de métiers familiaux.",
+    "pillar3Label": "Livraison Haut de Gamme",
+    "pillar3Desc": "Envoi par concierge sous 48 heures. Commandes internationales avec dédouanement assuré.",
+    "founderNote": "Un Mot du Fondateur",
+    "founderQuote": "“Nous n'avons pas créé Merit Wears pour suivre les tendances. Nous l'avons créé pour les personnes qui savent exactement qui elles sont — et qui s'habillent pour la décennie à venir, pas pour la saison passée. Chaque point de couture dans cette maison porte un nom, une main, une histoire. Merci de porter notre travail.”",
+    "founderRole": "Fondateur & PDG, Merit Luxury Wears Limited",
+    "codaLabel": "Coda",
+    "codaTitle1": "L'Art de la",
+    "codaTitle2": "Discipline.",
+    "codaDesc": "Un patrimoine ancré dans l'artisanat, distillé dans un uniforme contemporain de retenue, de profondeur et d'élégance sans effort. Nous ne chassons pas la saison — nous lui survivons.",
+    "codaLink": "Entrez dans la Maison"
+  }
+}
